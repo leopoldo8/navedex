@@ -19,6 +19,14 @@ export const FormContainer = styled.form`
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
+  transition: transform .4s cubic-bezier(.52,.96,.11,1.37), opacity .5s;
+  transform: scale(0.4);
+  opacity: 0.2;
+
+  ${props => props.loaded && `
+    transform: scale(1);
+    opacity: 1;
+  `}
 
   .icon-logo {
     font-size: 60px;

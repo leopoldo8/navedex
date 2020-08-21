@@ -18,7 +18,7 @@ import {
 } from './style';
 
 const NaverForm = ({ type }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [initialData, setInitialData] = useState(null);
 
   const history = useCallback(useHistory(), []);

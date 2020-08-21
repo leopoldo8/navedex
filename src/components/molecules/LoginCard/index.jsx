@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -12,10 +12,14 @@ import {
 } from './style';
 
 const LoginCard = ({ handleEnterSubmit, loading }) => {
+  const [loaded, setLoaded] = useState(false);
+
   const validationEnterSchema = Yup.object({
     email: Yup.string().required('Por favor, preencha o campo com um e-mail válido'),
     password: Yup.string().required('Por favor, preencha o campo com uma senha válida')
   });
+
+  useEffect(() => setLoaded(true), []);
 
   const content = ({ handleSubmit, handleChange, values, errors, setFieldError }) => {
     const onChange = (event, name) => {
@@ -24,7 +28,7 @@ const LoginCard = ({ handleEnterSubmit, loading }) => {
     }
 
     return (
-      <FormContainer onSubmit={handleSubmit}>
+      <FormContainer loaded={loaded} onSubmit={handleSubmit}>
         <i className="icon-logo" />
         <FieldContainer error={errors.email}>
           <Input
