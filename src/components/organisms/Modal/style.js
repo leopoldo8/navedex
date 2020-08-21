@@ -34,7 +34,8 @@ export const DefaultModalContent = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) ${props => (props.isOpened ? 'scale(1)' : 'scale(0.95)')};
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
   max-width: ${props => props.large ? `1007px` : `592px`};
   width: 90%;
   box-sizing: border-box;
@@ -42,7 +43,12 @@ export const DefaultModalContent = styled.div`
     padding: 32px;
   `}
   background: ${White};
-  transition: 0.1s ease-in;
+  transition: transform 10s cubic-bezier(0.16, 1, 0.3, 1);
+
+  ${props => props.isOpened && `
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  `}
 
   i.icon-close {
     font-size: 24px;

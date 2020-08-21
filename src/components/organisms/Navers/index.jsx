@@ -8,6 +8,8 @@ import CardPlaceholder from '@components/atoms/CardPlaceholder';
 
 import NaversService from '@api/services/navers';
 
+import { pause } from '@modules/utils';
+
 import { Container, CardContainer } from './style';
 
 const Navers = () => {
@@ -20,6 +22,7 @@ const Navers = () => {
       const response = await NaversService.index();
 
       if (response.status === 200) {
+        await pause(1);
         setData(response.data);
       }
     }

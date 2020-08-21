@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useContext } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -18,6 +18,8 @@ import {
 } from './style';
 
 const HomeTemplate = () => {
+  const [loaded, setLoaded] = useState(false);
+
   const { dispatch } = useCallback(useContext(appContext), []);
   const history = useCallback(useHistory(), []);
 
@@ -27,6 +29,8 @@ const HomeTemplate = () => {
   const { open, close } = useCallback(useModal('ConfirmModal'), []);
   const { open: openFeedBack } = useCallback(useModal('feedbackModal'), []);
   const { id } = useParams();
+
+  useEffect(() => setLoaded(true), []);
 
   useEffect(() => {
     function openConfirmDelete() {
@@ -77,7 +81,7 @@ const HomeTemplate = () => {
   }, [id, isDelete, history, open, close, openFeedBack, dispatch]);
 
   return (
-    <Container>
+    <Container loaded={loaded}>
       <TopContainer>
         <Title>Navers</Title>
         <ButtonContainer>

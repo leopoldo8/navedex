@@ -65,7 +65,7 @@ export const Actions = styled.div`
     transition: transform .2s ease-in-out;
 
     &:hover {
-      transform: scale(1.2) rotate(0.01deg);
+      transform: scale(1.1) rotate(0.01deg);
     }
   }
 `;

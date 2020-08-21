@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { FadeInFromTop } from '@assets/styles/transitions';
 import { SmallDisplay } from '@assets/styles/typography';
 import { Gray900 } from '@assets/styles/colors';
 
@@ -11,6 +12,8 @@ export const Container = styled.div`
   align-items: flex-start;
   box-sizing: border-box;
   margin: 0 auto;
+
+  ${props => FadeInFromTop(props.loaded)}
 `;
 
 export const TopContainer = styled.div`

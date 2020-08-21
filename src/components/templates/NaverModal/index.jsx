@@ -29,7 +29,6 @@ const NaverModal = () => {
   const { options } = state.modal;
 
   useEffect(() => {
-    setData(null);
     async function getNaver(id) {
       const response = await NaversService.show(id);
 
@@ -79,7 +78,7 @@ const NaverModal = () => {
       <DefaultModalContent large isOpened={isOpen} noPadding>
         <i className="icon-close" onClick={() => close()} />
         <Container>
-          {data === null
+          {data === null || (data && data.id !== options.id)
             ? <Loader theme="dark" size="large" />
             : content()
           }

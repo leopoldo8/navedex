@@ -18,6 +18,8 @@ import {
 } from './style';
 
 const NaverForm = ({ type }) => {
+  const [loaded, setLoaded] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [initialData, setInitialData] = useState(null);
 
@@ -30,6 +32,8 @@ const NaverForm = ({ type }) => {
     edit: "Editar Naver"
   };
   const title = dictionary[type];
+
+  useEffect(() => setLoaded(true), []);
 
   useEffect(() => {
     async function getNaver() {
@@ -114,7 +118,7 @@ const NaverForm = ({ type }) => {
   }
 
   return (
-    <Container>
+    <Container loaded={loaded}>
       <TopContainer>
         <i className="icon-arrow" onClick={() => history.goBack()} />
         <SubTitle>{ title }</SubTitle>
