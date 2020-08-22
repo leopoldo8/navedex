@@ -1,6 +1,6 @@
 # Navedex
 
-This project is a front-end challenge built with React, Context API, Styled-components, Prop-types and atomic design structured.
+This project is a front-end challenge built with React, Context API, Styled-components, Prop-types, and structured using atomic design.
 
 The Navedex lists Navers, showing a little bit about themselves.
 
