@@ -8,6 +8,10 @@ import UserContext from '@contexts/userContext';
 
 import { Container } from './style';
 
+/**
+ * The Login organism manages the login card component.
+ * It requests to auth API and manage the user's authorization in the application
+ */
 const Login = () => {
   const [loading, setLoading] = useState(false);
 

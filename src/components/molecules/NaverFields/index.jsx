@@ -14,6 +14,12 @@ import {
   Row
 } from './style';
 
+/**
+ * The NaverFields molecule manages the create/edit navers forms.
+ * It requires the onSubmit to submit the form
+ * It can set the loading prop of the button
+ * It can also have a initialData, to fill the fields
+ */
 const NaverFields = ({ onSubmit, loading, initialData }) => {
   const fields = [{
     name: 'name',

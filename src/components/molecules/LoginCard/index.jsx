@@ -11,6 +11,11 @@ import {
   FormContainer
 } from './style';
 
+/**
+ * The LoginCard molecule manages the login fields,
+ * It requires the handleEnterSubmit to submit the form
+ * It can set the loading prop of the button
+ */
 const LoginCard = ({ handleEnterSubmit, loading }) => {
   const [loaded, setLoaded] = useState(false);
 

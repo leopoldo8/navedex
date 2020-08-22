@@ -7,6 +7,9 @@ import {
   Text
 } from './style';
 
+/**
+ * The EmptyNaversPlaceholder is used to warn the user that the navers list is empty
+ */
 const EmptyNaversPlaceholder = () => {
   const [loaded, setLoaded] = useState(false);
 

@@ -11,6 +11,9 @@ import {
   Wrapper
 } from './style';
 
+/**
+ * The NaverCard molecule displays navers in the home page
+ */
 const NaverCard = ({ info, onClick }) => {
   const history = useHistory();
 

@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Input, Label, ErrorLabel } from './style';
 
+/**
+ * The TextInput Atom have 3 different sizes using the size prop: large, medium, and small.
+ * You can define the title that stands above the input using the title prop.
+ * You can also define an error message using the error prop.
+ */
 const TextInput = ({ title, error, ...props }) => {
   return (
     <>

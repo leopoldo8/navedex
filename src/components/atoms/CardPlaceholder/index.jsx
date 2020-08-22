@@ -1,6 +1,9 @@
 import React from 'react';
 import ContentLoader from "react-content-loader"
 
+/**
+ * The CardPlaceholder is used to fill the home page while it is loading
+ */
 const CardPlaceholder = () => (
   <ContentLoader
     speed={1}

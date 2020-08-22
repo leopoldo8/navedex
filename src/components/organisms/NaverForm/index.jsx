@@ -17,6 +17,10 @@ import {
   LoaderWrapper
 } from './style';
 
+/**
+ * The NaverForm organism manages the NaverFields component.
+ * It requests to Navers API and manage the naver's creation and edition in the application
+ */
 const NaverForm = ({ type }) => {
   const [loaded, setLoaded] = useState(false);
 

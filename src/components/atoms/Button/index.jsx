@@ -5,6 +5,11 @@ import Loader from '@components/atoms/Loader';
 
 import { StyledButton } from './style';
 
+/**
+ * The Button Atom can be solid or outline using its schema prop
+ * You also can define its label and whether the loader is displayed or not
+ * It dynamically passes the props to the HTML element, so you can use any property that an HTML <button> would.
+ */
 const Button = ({ schema, label, loading, ...props }) => {
   const Content = () => {
     if (loading)

@@ -13,6 +13,10 @@ import { pause } from '@modules/utils';
 
 import { Container, CardContainer } from './style';
 
+/**
+ * The Navers organism manages a group of NaverCard component.
+ * It requests to Navers index API and map it response to NaverCard components.
+ */
 const Navers = () => {
   const { open } = useModal('NaverModal');
   const { state } = useContext(appContext);

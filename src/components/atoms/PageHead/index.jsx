@@ -2,10 +2,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
+/**
+ * The PageHead Atom can add a subtitle to the page title into a specific page,
+ * as well as a image and/or description.
+ */
 const PageHead = ({ title, image, description, children }) => (
   <Helmet>
-    <title>{`Farkle - ${title}`}</title>
-    <meta property="og:site_name" content={`Farkle - ${title}`} />
+    <title>{`Navedex - ${title}`}</title>
+    <meta property="og:site_name" content={`Navedex - ${title}`} />
     <meta property="og:image" content={image} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -23,8 +27,8 @@ PageHead.propTypes = {
 
 PageHead.defaultProps = {
   children: [],
-  image: '%PUBLIC_URL%/android-chrome-512x512.png',
-  description: 'Jogue Farkle agora!'
+  image: '%PUBLIC_URL%/static/favicon/android-chrome-512x512.png',
+  description: 'Visualização, criação e edição de Navers'
 };
 
 export default PageHead;

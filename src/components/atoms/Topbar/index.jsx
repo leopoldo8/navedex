@@ -7,6 +7,9 @@ import {
   Logout
 } from './style';
 
+/**
+ * The Topbar displays the logo and the logout button at protected paths.
+ */
 const Topbar = () => {
   const { logout } = useContext(UserContext);
 

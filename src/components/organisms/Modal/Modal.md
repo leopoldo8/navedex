@@ -1,7 +1,23 @@
-<h3>Example:</h3>
+<h3>Example of usage:</h3>
+
+<p>ExampleModal/index.jsx</p>
 
 ```js
-// <InsertBoxWrapper onClick={() => dispatch({ type: 'SET_MODAL_OPENED', component: ModalExample, props: { text: 'some text' } })}>
-//   <InsertBox label="Complete your profile" />
-// </InsertBoxWrapper>
+const { isOpen, open, close } = useModal('ExampleModal');
+
+return (
+  <Modal isOpen={isOpen}>
+    {...}
+  </Modal>
+)
+```
+
+<p>SomeComponent/index.js</p>
+
+```js
+const { open } = useModal('ExampleModal');
+
+return (
+  <Button onClick={() => open()} label="Open Modal!" />
+)
 ```
