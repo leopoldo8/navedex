@@ -90,7 +90,6 @@ const NaverForm = ({ type }) => {
     NaversService.create(data)
       .then(response => {
         if (response.status === 200) {
-          console.log(resetForm);
           resetForm({});
           open({options: {
             title: 'Naver criado',
