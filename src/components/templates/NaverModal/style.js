@@ -67,7 +67,7 @@ export const Actions = styled.div`
     transition: background .2s ease-in-out;
 
     &:hover {
-      background: rgba(0, 0, 0, .25);
+      background: rgba(0, 0, 0, .15);
     }
   }
 `;

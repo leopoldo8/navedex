@@ -8,3 +8,12 @@ export const FadeInFromTop = (triggerAnimation) => `
     opacity: 1;
   `}
 `;
+
+export const FadeIn = (triggerAnimation) => `
+  transition: opacity .4s ease-in-out;
+  opacity: 0;
+
+  ${triggerAnimation && `
+    opacity: 1;
+  `}
+`;

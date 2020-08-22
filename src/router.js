@@ -10,6 +10,7 @@ import Home from '@components/pages/Home';
 import Login from '@components/pages/Login';
 import CreateNaver from '@components/pages/CreateNaver';
 import EditNaver from '@components/pages/EditNaver';
+import NotFound from '@components/pages/NotFound';
 
 import AuthService from '@api/services/auth';
 
@@ -79,7 +80,7 @@ const RouterConfig = () => (
       <ProtectedRoute exact path="/navers/:id/edit">
         <EditNaver />
       </ProtectedRoute>
-      <Route render={() => <p>Not found</p>} />
+      <Route component={NotFound} />
     </Switch>
   </PagesContainer>
 );

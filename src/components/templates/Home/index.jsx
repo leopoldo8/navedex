@@ -27,7 +27,7 @@ const HomeTemplate = () => {
   const isDelete = location.pathname.includes('/delete');
 
   const { open, close } = useCallback(useModal('ConfirmModal'), []);
-  const { open: openFeedBack } = useCallback(useModal('feedbackModal'), []);
+  const { open: openFeedBack } = useCallback(useModal('FeedbackModal'), []);
   const { id } = useParams();
 
   useEffect(() => setLoaded(true), []);

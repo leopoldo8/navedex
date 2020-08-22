@@ -5,6 +5,7 @@ import appContext from '@contexts/appContext';
 import { useModal } from '@components/organisms/Modal';
 import NaverCard from '@components/molecules/NaverCard';
 import CardPlaceholder from '@components/atoms/CardPlaceholder';
+import EmptyNaversPlaceholder from '@components/atoms/EmptyNaversPlaceholder';
 
 import NaversService from '@api/services/navers';
 
@@ -53,13 +54,21 @@ const Navers = () => {
     </>
   );
 
+  const content = () => {
+    if (data === null)
+      return <LoadingContent />;
+
+    if (data.length === 0)
+      return <EmptyNaversPlaceholder />;
+
+    return data.map(naver =>
+      <NaverCard info={naver} key={naver.id} onClick={() => showNaver(naver.id)} />
+    );
+  }
+
   return (
     <Container>
-      {data === null ? (
-        <LoadingContent />
-      ) : data.map(naver =>
-        <NaverCard info={naver} key={naver.id} onClick={() => showNaver(naver.id)} />
-      )}
+      {content()}
     </Container>
   )
 }

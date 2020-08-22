@@ -33,6 +33,9 @@ const fonts = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-notice:before {
+  content: "\\e905";
+}
 .icon-delete:before {
   content: "\\e900";
 }
