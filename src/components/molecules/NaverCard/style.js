@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { LargeLabel, Paragraph } from '@assets/styles/typography';
-import { Gray900 } from '@assets/styles/colors';
+import { Gray900, White } from '@assets/styles/colors';
 
 export const Card = styled.div`
   width: 280px;
@@ -9,6 +9,12 @@ export const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
   padding: 16px;
+  transition: transform .3s ease-in-out;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.03) rotate(0.01deg);
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -40,12 +46,14 @@ export const Actions = styled.div`
   i {
     cursor: pointer;
     font-size: 24px;
-    margin-right: 8px;
-    transform: scale(1);
-    transition: transform .2s ease-in-out;
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 4px;
+    background: ${White};
+    transition: background .2s ease-in-out;
 
     &:hover {
-      transform: scale(1.1) rotate(0.01deg);
+      background: rgba(0, 0, 0, .25);
     }
   }
 `;

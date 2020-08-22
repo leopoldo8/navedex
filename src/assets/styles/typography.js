@@ -1,4 +1,5 @@
 export const Label = `
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -7,6 +8,7 @@ export const Label = `
 `;
 
 export const LargeLabel = `
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -14,6 +16,7 @@ export const LargeLabel = `
 `;
 
 export const Paragraph = `
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -21,6 +24,7 @@ export const Paragraph = `
 `;
 
 export const SmallDisplay = `
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -28,6 +32,7 @@ export const SmallDisplay = `
 `;
 
 export const Display = `
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;

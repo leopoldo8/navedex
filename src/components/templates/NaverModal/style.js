@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { SmallDisplay, Paragraph } from '@assets/styles/typography';
-import { Black, Gray900 } from '@assets/styles/colors';
+import { Black, Gray900, White } from '@assets/styles/colors';
 
 export const Container = styled.div`
   min-height: 503px;
@@ -60,12 +60,14 @@ export const Actions = styled.div`
   i {
     font-size: 24px;
     cursor: pointer;
-    margin-right: 8px;
-    transform: scale(1);
-    transition: transform .2s ease-in-out;
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 4px;
+    background: ${White};
+    transition: background .2s ease-in-out;
 
     &:hover {
-      transform: scale(1.1) rotate(0.01deg);
+      background: rgba(0, 0, 0, .25);
     }
   }
 `;

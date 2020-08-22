@@ -15,7 +15,7 @@ import { Container, CardContainer } from './style';
 const Navers = () => {
   const { open } = useModal('NaverModal');
   const { state } = useContext(appContext);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     async function getNavers() {
@@ -44,17 +44,21 @@ const Navers = () => {
     </CardContainer>
   );
 
+  const LoadingContent = () => (
+    <>
+      <CardLoader />
+      <CardLoader />
+      <CardLoader />
+      <CardLoader />
+    </>
+  );
+
   return (
     <Container>
-      {data.length ? data.map(naver =>
+      {data === null ? (
+        <LoadingContent />
+      ) : data.map(naver =>
         <NaverCard info={naver} key={naver.id} onClick={() => showNaver(naver.id)} />
-      ) : (
-        <>
-          <CardLoader />
-          <CardLoader />
-          <CardLoader />
-          <CardLoader />
-        </>
       )}
     </Container>
   )

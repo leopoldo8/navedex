@@ -36,45 +36,46 @@ const HomeTemplate = () => {
     function openConfirmDelete() {
       NaversService.deactivateHandleErrorOnce = true;
       NaversService.show(id)
-        .then(() => {
-          open({
-            options: {
-              title: 'Excluir Naver',
-              description: 'Tem certeza que deseja excluir este Naver?',
-              disableBackgroundClose: true,
-              onConfirm: async () => {
-                dispatch({
-                  type: 'SET_MODAL_OPTIONS',
-                  payload: {
-                    loading: true
-                  }
-                });
-                const response = await NaversService.remove(id);
-
-                if (response.status === 200) {
-                  openFeedBack({
-                    options: {
-                      title: 'Naver excluído',
-                      description: 'Naver excluído com sucesso!'
-                    }
-                  });
-                  dispatch({ type: 'REFRESH_INDEX' });
-                  history.push('/navers');
-                }
-              },
-              onCancel: () => {
-                history.push('/navers');
-                close();
-              }
-            }
-          });
-        })
         .catch((e) => {
           if (e.response.status === 404) {
+            close();
             history.push('/navers');
             toast.error('Naver não encontrado');
           }
         });
+
+      open({
+        options: {
+          title: 'Excluir Naver',
+          description: 'Tem certeza que deseja excluir este Naver?',
+          disableBackgroundClose: true,
+          onConfirm: async () => {
+            dispatch({
+              type: 'SET_MODAL_OPTIONS',
+              payload: {
+                loading: true
+              }
+            });
+            const response = await NaversService.remove(id);
+
+            if (response.status === 200) {
+              close();
+              openFeedBack({
+                options: {
+                  title: 'Naver excluído',
+                  description: 'Naver excluído com sucesso!'
+                }
+              });
+              dispatch({ type: 'REFRESH_INDEX' });
+              history.push('/navers');
+            }
+          },
+          onCancel: () => {
+            history.push('/navers');
+            close();
+          }
+        }
+      });
     }
 
     if (isDelete) openConfirmDelete();
